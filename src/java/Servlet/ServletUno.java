@@ -2,7 +2,10 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+ * @WillNelson
+ * Adapted from https://www.studytonight.com/servlet/servlet-request
  */
+
 package Servlet;
 
 import java.io.IOException;
