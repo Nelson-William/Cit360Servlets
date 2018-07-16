@@ -30,17 +30,17 @@ public class ServletUno extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        try{
-            out.println("<h2>If you see this the first block of servlet code is working.</h2>");
-        } finally {
-            out.close();
-        }
-    }
-    
+    /**protected void doGet(HttpServletRequest request, HttpServletResponse response)
+     *       throws ServletException, IOException{
+     *   response.setContentType("text/html;charset=UTF-8");
+     *   PrintWriter out = response.getWriter();
+     *   try{
+     *       out.println("<h2>If you see this the first block of servlet code is working.</h2>");
+     *   } finally {
+     *       out.close();
+     *   }
+    *}
+    */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -53,6 +53,14 @@ public class ServletUno extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ServletUno at " + request.getContextPath() + "</h1>");
+            String make = request.getParameter("make");
+            String model = request.getParameter("model");
+            String year = request.getParameter("year");
+            String color = request.getParameter("color");
+            out.println("<p>Make: "+ make + "</p>");
+            out.println("<p>Model: " + model + "</p>");
+            out.println("<p>Year: " + year + "</p>");
+            out.println("<p>Color: " + color + "</p>");
             out.println("</body>");
             out.println("</html>");
         }
